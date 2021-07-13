@@ -1,0 +1,35 @@
+{%load static%}
+{%include 'base.html'%}
+{%include 'nav.html'%}
+
+{%block contant %}
+
+{% ifequal error 'no' %}
+    <script>
+        alert("logged in successfull");
+        window.location=("{%url 'home'%}")
+    </script>
+{% endifequal  %}
+
+{% ifequal error 'yes' %}
+    <script>
+        alert("invalid login Credentials, Try Again");
+        
+    </script>
+{% endifequal  %}
+    <div class="container mt-5">
+        <h2 class="text-center">Admin Login</h2>
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="">Admin name</label>
+            <input type="text" class="form-control" name="uname">
+            <label for="">Password</label>
+            <input type="password" class="form-control" name="pwd">
+            <br>
+            <input type="submit" value="login" class="form-control btn btn-primary" >
+        </form>
+
+    </div>
+{%endblock contant %}
+{%include 'footer.html'%}

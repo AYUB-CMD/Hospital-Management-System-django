@@ -1,0 +1,46 @@
+{%load static%}
+{%include 'base.html'%}
+{%include 'nav.html'%}
+
+{%block contant %}
+<div class="container mt-5">
+    <h2 class="text-center">Add Appointment</h2>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="">Doctor name</label>
+        <select name="doctor" class="form-control">
+            {%for i in doctor%}
+            <option value="{{i.name}}"> <p>ID [{{i.id}}]  :</p> {{i.name}} </option>
+            {%endfor%}
+        </select>
+        <label for="">Patient name</label>
+        <select name="patient" class="form-control">
+            {%for i in patient%}
+            <option value="{{i.name}}"><p>ID [{{i.id}}] :</p> {{i.name}} </option>
+            {%endfor%}
+        </select>
+        <label for="">Date</label>
+        <input type="date" class="form-control" name="date" required>
+        <label for="">Time</label>
+        <input type="time" class="form-control" name="time" required>        
+        <br>
+        <input type="submit" value="submit" class="form-control btn btn-primary" >
+    </form>
+
+</div>
+{% ifequal error 'no' %}
+    <script>
+        alert("Record Added");
+        window.location=("{%url 'view_appointment'%}")
+    </script>
+{% endifequal  %}
+{% ifequal error 'yes' %}
+    <script>
+        alert("Something went Wrong try Again");
+
+    </script>
+{% endifequal  %}
+{%endblock contant %}
+{%include 'footer.html'%}
+

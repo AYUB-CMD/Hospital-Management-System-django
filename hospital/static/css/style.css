@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-link{
+    color: white !important;
+}
+.nav-link:hover{
+    color: greenyellow !important;
+    font-weight: bold;
+}
+.navbar-brand{
+    color: white !important;
+}
+.navbar-brand:hover{
+    color: greenyellow !important;
+    font-weight: bold;
+}
+
+.div-style:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-15px);
+}
+.div-style a{
+    text-decoration: none;
+}
+.custom-img{
+    height: 100vh;
+    width: 100%;
+}
+.custom-text{
+    margin-bottom: 150px;
+}
+
+
