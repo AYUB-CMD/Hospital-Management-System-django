@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uj^soe5#1iny2udyn3(4u1#7$s@jqnm(4fls#@k5w$clnafbgj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.glitchapp1.azurewebsites.net']
+ALLOWED_HOSTS = []
 
 
 # Application definition
